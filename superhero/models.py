@@ -7,3 +7,6 @@ class Superhero(models.Model):
     public = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def get_information(self):
+        return self.name + ' belongs to ' + self.publisher
