@@ -90,3 +90,8 @@ class SuperheroeApi(APIView):
                 serializer.errors,
                 status = status.HTTP_400_BAD_REQUEST
             )
+
+
+class HealthCheck(APIView):
+    def get(self, req):
+        return Response({'msg': 'status up'}, status=status.HTTP_200_OK)   
