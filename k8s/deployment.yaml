@@ -15,8 +15,19 @@ spec:
         app: backend-superhero-django-api
     spec:
       containers:
-      - name: superhero-django-api
-        image: superhero-django-api
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8080
+        - name: superhero-django-api
+          image: superhero-django-api
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 8000
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          readinessProbe:
+            tcpSocket:
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10

@@ -1,7 +1,8 @@
-FROM python:3.8
+FROM python:3.8-slim
 
 # Set the current working directory inside the container 
-WORKDIR /app 
+ENV PROJECT_ROOT /app
+WORKDIR $PROJECT_ROOT
 
 # set environment variables  
 ENV PYTHONUNBUFFERED 1 
