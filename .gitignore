@@ -1,2 +1,5 @@
 db.sqlite3
 env/
+superhero_django_api/__pycache__/
+superhero/__pycache__/
+settings.json

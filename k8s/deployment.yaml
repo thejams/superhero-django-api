@@ -16,13 +16,6 @@ spec:
     spec:
       containers:
       - name: superhero-django-api
-        args:
-          - sh
-          - -c
-          - |-
-            python manage.py makemigrations &&
-            python manage.py migrate &&
-            python manage.py runserver 0.0.0.0:8000
         image: superhero-django-api
         imagePullPolicy: IfNotPresent
         ports:
