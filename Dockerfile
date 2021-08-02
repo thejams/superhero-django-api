@@ -14,7 +14,9 @@ RUN pip install --upgrade pip
 COPY . .
 
 # install project dependencies
-RUN pip install -r requirements.txt  
+RUN pip install pyyaml uritemplate &&\ 
+    pip install coreapi &&\ 
+    pip install -r requirements.txt  
 
 # port where the Django app runs  
 EXPOSE 8000  
